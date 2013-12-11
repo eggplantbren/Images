@@ -3,11 +3,14 @@
 
 #include "Model.h"
 #include "../PSFs/Gaussian.h"
+#include <RJObject.h>
+#include <Distributions/ClassicMassInf.h>
 #include <vector>
 
 class StarField:public DNest3::Model
 {
 	private:
+		RJObject<ClassicMassInf> stars;
 		Gaussian psf;
 
 	public:

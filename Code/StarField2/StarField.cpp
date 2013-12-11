@@ -7,13 +7,15 @@ using namespace std;
 using namespace DNest3;
 
 StarField::StarField()
-:psf(0.1, 10.)
+:stars(3, 1000, false, ClassicMassInf(-50., 50., -50., 50., 1E-3, 1E3))
+,psf(0.1, 10.)
 {
 
 }
 
 void StarField::fromPrior()
 {
+	stars.fromPrior();
 	psf.fromPrior();
 }
 
@@ -21,7 +23,11 @@ double StarField::perturb()
 {
 	double logH = 0.;
 
-	logH += psf.perturb();
+	int which = randInt(2);
+	if(which == 0)
+		logH += stars.perturb();
+	else
+		logH += psf.perturb();
 
 	return logH;
 }
@@ -33,6 +39,7 @@ double StarField::logLikelihood() const
 
 void StarField::print(std::ostream& out) const
 {
+	stars.print(out);
 	psf.print(out);
 }
 

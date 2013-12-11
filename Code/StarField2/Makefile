@@ -1,5 +1,5 @@
 CFLAGS = -O2 -Wall -Wextra -ansi -pedantic
-LIBS =  -limages -ldnest3 -lgsl -lgslcblas -lboost_system -lboost_thread
+LIBS =  -limages -lrjobject -ldnest3 -lgsl -lgslcblas -lboost_system -lboost_thread
 
 default:
 	g++ $(CFLAGS) -c *.cpp
