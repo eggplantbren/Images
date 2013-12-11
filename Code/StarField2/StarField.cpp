@@ -6,8 +6,10 @@
 using namespace std;
 using namespace DNest3;
 
+const int StarField::max_num_stars = 200;
+
 StarField::StarField()
-:stars(3, 1000, false, ClassicMassInf(-50., 50., -50., 50., 1E-3, 1E3))
+:stars(3, max_num_stars, false, ClassicMassInf(-50., 50., -50., 50., 1E-3, 1E3))
 ,psf(0.1, 10.)
 {
 

@@ -10,6 +10,9 @@
 class StarField:public DNest3::Model
 {
 	private:
+		static const int max_num_stars;
+
+	private:
 		RJObject<ClassicMassInf> stars;
 		Gaussian psf;
 
