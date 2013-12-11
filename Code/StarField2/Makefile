@@ -1,8 +1,8 @@
 CFLAGS = -O2 -Wall -Wextra -ansi -pedantic
-LIBS =  -ldnest3 -lgsl -lgslcblas -lboost_system -lboost_thread
+LIBS =  -limages -ldnest3 -lgsl -lgslcblas -lboost_system -lboost_thread
 
 default:
 	g++ $(CFLAGS) -c *.cpp
-	g++ -o main *.o $(LIBS)
+	g++ -L .. -o main *.o $(LIBS)
 	rm -f *.o
 

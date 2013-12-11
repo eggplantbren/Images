@@ -2,12 +2,13 @@
 #define _StarField_
 
 #include "Model.h"
+#include "../PSFs/Gaussian.h"
 #include <vector>
 
 class StarField:public DNest3::Model
 {
 	private:
-		
+		Gaussian psf;
 
 	public:
 		StarField();
