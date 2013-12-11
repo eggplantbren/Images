@@ -16,6 +16,9 @@ class StarField:public DNest3::Model
 		RJObject<ClassicMassInf> stars;
 		Gaussian psf;
 
+		// Predicted (noise-free) image
+		std::vector< std::vector<double> > mock_image;
+
 	public:
 		StarField();
 

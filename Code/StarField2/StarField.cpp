@@ -26,6 +26,8 @@ StarField::StarField()
 			1E-3, 1E3))
 ,psf(0.5*sqrt(Data::get_instance().get_dA()),
 	20.*sqrt(Data::get_instance().get_dA()))
+,mock_image(Data::get_instance().get_ni(),
+		vector<double>(Data::get_instance().get_nj()))
 {
 
 }
