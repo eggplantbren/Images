@@ -1,3 +1,7 @@
 main
 *.so
+sample.txt
+sample_info.txt
+levels.txt
+weights.txt
 
