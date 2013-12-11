@@ -13,11 +13,17 @@ class StarField:public DNest3::Model
 		static const int max_num_stars;
 
 	private:
+		/* VARIABLES */
 		RJObject<ClassicMassInf> stars;
 		Gaussian psf;
 
 		// Predicted (noise-free) image
 		std::vector< std::vector<double> > mock_image;
+
+
+		/* METHODS */
+		// Compute the mock image from scratch
+		void compute_mock_image();
 
 	public:
 		StarField();

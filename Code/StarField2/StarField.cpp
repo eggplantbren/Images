@@ -36,6 +36,13 @@ void StarField::fromPrior()
 {
 	stars.fromPrior();
 	psf.fromPrior();
+	compute_mock_image();
+}
+
+void StarField::compute_mock_image()
+{
+	mock_image.assign(Data::get_instance().get_ni(),
+				vector<double>(Data::get_instance().get_nj(), 0.));
 }
 
 double StarField::perturb()
